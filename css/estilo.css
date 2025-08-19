@@ -201,17 +201,21 @@ header nav a {
 }
 
 /* === DEPOIMENTO === */
+/* === DEPOIMENTO === */
 .depoimento {
-    position: relative; 
+    position: relative;
     padding: 4rem 2rem;
+    z-index: 1; 
+
+    /* Layout em Grid para telas grandes */
     display: grid;
-    grid-template-columns: 2fr auto 2fr; /* Texto | Imagem | Avaliação */
+    grid-template-columns: 2fr auto 2fr;
     align-items: center;
     gap: 2rem;
+    
     max-width: var(--largura-container);
     margin: 0 auto;
     color: #FFF;
-    z-index: 1; /* Garante que o conteúdo fique acima da imagem de fundo */
 }
 
 .depoimento::before {
@@ -221,14 +225,14 @@ header nav a {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../img/Imagem 3.jpg'); 
+    background-image: url('../img/Imagem 3.jpg');
     background-position: center;
     background-size: cover;
     opacity: 0.3;
-    z-index: -1; /* Garante que a imagem de fundo fique atrás do conteúdo */
+    z-index: -1;
 }
 
-/* Estilo do texto */
+/* Coluna 1: Texto */
 .depoimento-texto {
     text-align: left;
 }
@@ -250,7 +254,7 @@ header nav a {
     display: block;
 }
 
-/* Estilo da foto */
+/* Coluna 2: Foto */
 .depoimento-foto {
     width: 180px;
     height: 180px;
@@ -260,7 +264,7 @@ header nav a {
     justify-self: center;
 }
 
-/* Estilo da avaliação */
+/* Coluna 3: Avaliação */
 .depoimento-avaliacao {
     text-align: center;
 }
@@ -369,5 +373,32 @@ header nav a {
 @media (max-width: 400px) {
     .final-texto h3 {
         font-size: 1.5rem; /* Reduz o tamanho do texto em telas muito pequenas */
+    }
+}
+
+@media (max-width: 900px) {
+    .depoimento {
+        /* Muda para layout de 1 coluna */
+        grid-template-columns: 1fr;
+    }
+
+    .depoimento-texto {
+        /* Centraliza o texto quando estiver em 1 coluna */
+        text-align: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .depoimento {
+        padding: 3rem 1rem; /* Diminui o espaçamento */
+    }
+
+    .depoimento-foto {
+        width: 140px; /* Diminui a foto */
+        height: 140px;
+    }
+
+    .depoimento h4 {
+        font-size: 1.5rem; /* Diminui o título */
     }
 }
