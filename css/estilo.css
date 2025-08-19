@@ -217,14 +217,14 @@ header nav a {
     margin-bottom: 1rem;
 }
 
-.depoimento blockquote {
+.depoimento p {
     font-size: 1.25rem;
     font-style: italic;
     margin-bottom: 1rem;
     color: #ccc;
 }
 
-.depoimento cite {
+.depoimento h5 {
     font-weight: bold;
 }
 
