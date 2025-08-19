@@ -163,7 +163,6 @@ header nav a {
     color: var(--cor-fundo);
 }
 
-
 /* === FUNÇÕES === */
 .funcoes {
     padding: 4rem 1rem;
@@ -207,41 +206,107 @@ header nav a {
     text-align: center;
     max-width: 800px;
     margin: 0 auto;
-    background-image: url('../img/Imagem\ 3.jpg');
+    background-image: url(../img/Imagem\ 3.jpg);
     background-position: center;
     background-size: cover;
-    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.5); /* Sombra */
 }
 
-/* Estilização das estrelas */
-.depoimento .estrelas {
-    color: goldenrod;
-    margin-top: 0.5rem;
+.depoimento h4 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+}
+
+.depoimento blockquote {
+    font-size: 1.25rem;
+    font-style: italic;
+    margin-bottom: 1rem;
+    color: #ccc;
+}
+
+.depoimento cite {
+    font-weight: bold;
+}
+
+.depoimento .dados {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.depoimento .dados img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 4px solid var(--cor-verde);
+    object-fit: cover;
+}
+
+.depoimento .dados p {
+    font-size: 1.25rem;
 }
 
 /* === FOOTER === */
 .footer {
     padding: 4rem 1rem;
     background-color: var(--cor-fundo-secundaria);
-    border-top: 3px solid var(--cor-verde); /* Bordas no topo do footer */
+}
+
+.final {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Duas colunas para texto e formulário */
+    gap: 2rem; /* Espaçamento entre as colunas */
+    align-items: start; /* Alinha os itens no topo */
+    max-width: var(--largura-container);
+    margin: 0 auto;
 }
 
 .final-texto h3 {
     font-size: 2rem;
     color: var(--cor-texto);
-    border-bottom: 2px solid var(--cor-verde); /* Linha embaixo do título */
     padding-bottom: 0.5rem;
 }
 
-/* Input do formulário */
+.final-texto p {
+    font-size: 1.5rem;
+}
+
+/* Estilo do card do formulário */
+.form {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; /* Espaçamento entre label e input */
+}
+
+/* Estilo da tabela (labels)*/
+.form label {
+    color: #333;
+    font-weight: 500;
+}
+
+/* Estilo dos campos de input */
 .form input {
     width: 100%;
     padding: 0.75rem;
-    background-color: #f0f0f0; /* Background mais claro */
-    border: 1px solid var(--cor-borda-cinza);
-    border-radius: 8px; /* Bordas arredondadas */
+    background-color: #ffffff; /* Fundo branco */
+    border: 1px solid #ddd; /* Borda mais suave */
+    border-radius: 8px;
     color: var(--cor-fundo);
     font-size: 1rem;
+    margin-bottom: 1rem; /* Adiciona espaço abaixo de cada input */
+}
+
+/* Garante que o último input não tenha margem extra */
+.form input:last-of-type {
+    margin-bottom: 0;
+}
+
+.form .btn {
+    margin-top: 1rem; /* Espaço acima do botão */
 }
 
 /* === MEDIA QUERIES PARA RESPONSIVIDADE === */
