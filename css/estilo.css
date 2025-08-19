@@ -202,13 +202,35 @@ header nav a {
 
 /* === DEPOIMENTO === */
 .depoimento {
-    padding: 4rem 1rem;
-    text-align: center;
-    max-width: 800px;
+    position: relative; 
+    padding: 4rem 2rem;
+    display: grid;
+    grid-template-columns: 2fr auto 2fr; /* Texto | Imagem | Avaliação */
+    align-items: center;
+    gap: 2rem;
+    max-width: var(--largura-container);
     margin: 0 auto;
-    background-image: url(../img/Imagem\ 3.jpg);
+    color: #FFF;
+    z-index: 1; /* Garante que o conteúdo fique acima da imagem de fundo */
+}
+
+.depoimento::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/Imagem 3.jpg'); 
     background-position: center;
     background-size: cover;
+    opacity: 0.3;
+    z-index: -1; /* Garante que a imagem de fundo fique atrás do conteúdo */
+}
+
+/* Estilo do texto */
+.depoimento-texto {
+    text-align: left;
 }
 
 .depoimento h4 {
@@ -216,35 +238,42 @@ header nav a {
     margin-bottom: 1rem;
 }
 
-.depoimento blockquote {
-    font-size: 1.25rem;
+.depoimento .citacao {
+    font-size: 1.1rem;
     font-style: italic;
     margin-bottom: 1rem;
     color: #ccc;
 }
 
-.depoimento cite {
-    font-weight: bold;
+.depoimento .autor {
+    font-weight: 500;
+    display: block;
 }
 
-.depoimento .dados {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-top: 2rem;
-}
-
-.depoimento .dados img {
-    width: 100px;
-    height: 100px;
+/* Estilo da foto */
+.depoimento-foto {
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
-    border: 4px solid var(--cor-verde);
+    border: 5px solid white;
     object-fit: cover;
+    justify-self: center;
 }
 
-.depoimento .dados p {
+/* Estilo da avaliação */
+.depoimento-avaliacao {
+    text-align: center;
+}
+
+.depoimento .estrelas {
+    font-size: 2rem;
+    color: #FFD700;
+    margin-bottom: 0.5rem;
+}
+
+.depoimento-avaliacao p {
     font-size: 1.25rem;
+    font-weight: 500;
 }
 
 /* === FOOTER === */
